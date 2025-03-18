@@ -46,10 +46,10 @@ def trigger_workflow(request):
             - `repo` The repository name.
             - `event` The name of the event to trigger.
             - `redirect_uri` The URL to redirect to after triggering the workflow.
-        - http://127.0.0.1:8000/service/trigger-workflow?owner=abdbbdii&repo=abdbbdii&event=update-readme&redirect_uri=http://github.com/abdbbdii/abdbbdii
+        - http://127.0.0.1:8000/service/trigger-workflow?owner=abdxdev&repo=abdxdev&event=update-readme&redirect_uri=http://github.com/abdxdev/abdxdev
     """
-    REPO_OWNER = request.GET.get("owner", "abdbbdii")
-    REPO_NAME = request.GET.get("repo", "abdbbdii")
+    REPO_OWNER = request.GET.get("owner", "abdxdev")
+    REPO_NAME = request.GET.get("repo", "abdxdev")
     url = f"https://api.github.com/repos/{REPO_OWNER}/{REPO_NAME}/dispatches"
     headers = {"Authorization": f"Bearer {os.getenv('GITHUB_TOKEN')}", "Accept": "application/vnd.github.everest-preview+json"}
     data = {"event_type": request.GET.get("event", "update-readme")}

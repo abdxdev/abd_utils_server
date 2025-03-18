@@ -35,6 +35,7 @@ ALLOWED_HOSTS = [
     "127.0.0.1",
     ".serveo.net",
     "localhost",
+    "192.168.0.1"
 ]
 
 # SECURE_SSL_REDIRECT = True
