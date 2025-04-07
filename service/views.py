@@ -29,7 +29,7 @@ def this(request):
         "GET": request.GET,
         "POST": request.POST,
         "FILES": request.FILES,
-        "headers": {k: request.headers[k] for k in request.headers.keys()},
+        "headers": {k: request.headers[k] for k in request.headers.keys() if not k.startswith('X-')},
         "data": request.body.decode("utf-8"),
     }
     print(r)
